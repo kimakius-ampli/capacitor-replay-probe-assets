@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=411, initial-scale=1">
+<title>Off-device replay harness</title>
+<style>
+  html,body { margin:0; padding:0; background:#fff; }
+  #banner { font:11px/1.35 -apple-system, sans-serif; background:#16181d; color:#fff;
+            padding:6px 8px; }
+  #status { font:11px/1.35 -apple-system, sans-serif; background:#e8eefc; color:#23439c;
+            padding:4px 8px; }
+  #root { width:411px; }
+  #root iframe { border:0 !important; width:411px !important; display:block; }
+  .replayer-wrapper { transform:none !important; }
+  .replayer-mouse, .replayer-mouse-tail { display:none !important; }
+</style>
+</head>
+<body>
+<div id="banner">loading…</div>
+<div id="status">loading…</div>
+<div id="root"></div>
+<script src="replay.js"></script>
+</body>
+</html>
