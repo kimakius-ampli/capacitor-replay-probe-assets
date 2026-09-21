@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="probe-ext-star" viewBox="0 0 100 100">
+    <polygon points="50,3 61,38 98,38 68,60 79,96 50,74 21,96 32,60 2,38 39,38"
+             fill="#d61f8d" stroke="#3a0d2a" stroke-width="4"/>
+  </symbol>
+</svg>
