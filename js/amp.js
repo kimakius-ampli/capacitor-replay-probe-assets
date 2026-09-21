@@ -44800,7 +44800,8 @@
     ["c8_gfonts_inlined", "fonts.gstatic.com"],
     ["any_data_image", "data:image"],
     ["any_data_font", "data:font"],
-    ["any_data_octet", "data:application/octet-stream"]
+    ["any_data_octet", "data:application/octet-stream"],
+    ["rr_dataURL_attr", "rr_dataURL"]
   ];
   var inspected = 0;
   function countOf(hay, needle) {
@@ -44846,10 +44847,17 @@
       const cssurl = /url\(\\?["']?([^)\\"']+)\\?["']?\)/g;
       while ((m2 = cssurl.exec(text)) !== null) urls.add("css  " + m2[1]);
       console.log("[PROBE] capture-urls " + JSON.stringify([...urls].slice(0, 30)));
-      for (const needle of ["ProbeFace.ttf", "img/bg.png"]) {
+      for (const needle of ["ProbeFace.ttf", "img/bg.png", "rr_dataURL", "data:image"]) {
         const i2 = text.indexOf(needle);
         console.log("[PROBE] capture-ctx " + needle + " :: " + (i2 === -1 ? "NOT PRESENT" : text.slice(Math.max(0, i2 - 70), i2 + 20).replace(/\s+/g, " ")));
       }
+      const CH = 800;
+      const total = Math.ceil(text.length / CH);
+      console.log("[PAYLOAD] begin " + total);
+      for (let i2 = 0; i2 < total; i2++) {
+        console.log("[PAYLOAD] " + i2 + " " + text.slice(i2 * CH, (i2 + 1) * CH));
+      }
+      console.log("[PAYLOAD] end " + total);
     }
   }
   if (!apiKey) {
